@@ -1,51 +1,47 @@
-// Person class
+// Person Class
 class Person {
-  constructor(name, age) {
+  private _name: string;
+  private _age: number;
+
+  constructor(name: string, age: number) {
     this._name = name;
     this._age = age;
   }
 
-  // Getter for name
-  get name() {
+  get name(): string {
     return this._name;
   }
 
-  // Getter for age
-  get age() {
+  get age(): number {
     return this._age;
   }
 
-  // Setter for age
-  set age(age) {
+  set age(age: number) {
     this._age = age;
   }
 }
 
-// Student class extends Person
+// Student Class
 class Student extends Person {
-  study() {
+  study(): void {
     console.log(`${this.name} is studying`);
   }
 }
 
-// Teacher class extends Person
+// Teacher Class
 class Teacher extends Person {
-  teach() {
+  teach(): void {
     console.log(`${this.name} is teaching`);
   }
 }
-
-// Creating a Person instance
 const person = new Person("John", 25);
-console.log(person.name);    // Output: John
+console.log(person.name);  // Output: John
 
-person.age = 30;             // Using setter
-console.log(person.age);     // Output: 30
+person.age = 30;
+console.log(person.age);   // Output: 30
 
-// Creating a Student instance
 const student = new Student("Alice", 22);
-student.study();             // Output: Alice is studying
+student.study();           // Output: Alice is studying
 
-// Creating a Teacher instance
 const teacher = new Teacher("Bob", 40);
-teacher.teach();             // Output: Bob is teaching
+teacher.teach();           // Output: Bob is teaching
